@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Digigarage</title>
+ <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+
+   
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.open_search {
+
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  z-index: 20;
+}
+.search_block {
+  opacity: 0;
+  text-align: center;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -41px;
+  margin-left: -150px;
+}
+.search_block.visible {
+  opacity: 1;
+  height: auto;
+}
+.search_block.visible .search_box {
+  opacity: 1;
+  top: 109px;
+  transform: scale(1);
+}
+.search_block .overlayer {
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.search_box {
+
+  box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  opacity: 0;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  top: -120px;
+  transform: scale(1.05);
+  transition: all 0.4s ease 0s;
+  z-index: 10;
+}
+.search_box .inner {
+  border: 1px solid #000;
+}
+.search_box .search_input {
+  border: 3px solid #fff;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 60px;
+  line-height: 2;
+  min-width: 300px;
+  outline: medium none;
+  padding: 10px 10px 10px 43px;
+  width: 320px;
+  transition: all 0.45s ease 0s;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.search_box .search_input.typing {
+  border: 3px solid #000;
+}
+.search_box .search_icon {
+  background-color: transparent;
+  border: medium none;
+  color: #111;
+  font-size: 16px;
+  left: 20px;
+  line-height: 1;
+  padding: 8px;
+  position: absolute;
+  top: 24px;
+}
+::-webkit-input-placeholder {
+  color: #999;
+
+}
+:-moz-placeholder {
+  color: #999;
+
+}
+::-moz-placeholder {
+  color: #999;
+ 
+}
+:-ms-input-placeholder {
+  color: #999;
+  
+}
+
+
+
+
+.opens_search {
+
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  z-index: 20;
+}
+.searchs_block {
+  opacity: 0;
+  text-align: center;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -41px;
+  margin-left: -150px;
+}
+.searchs_block.visible {
+  opacity: 1;
+  height: auto;
+}
+.searchs_block.visible .searchs_box {
+  opacity: 1;
+  top: 109px;
+  transform: scale(1);
+}
+.searchs_block .overlayers {
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.searchs_box {
+
+  box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  opacity: 0;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  top: -120px;
+  transform: scale(1.05);
+  transition: all 0.4s ease 0s;
+  z-index: 10;
+}
+.searchs_box .inners {
+  border: 1px solid #000;
+}
+.searchs_box .searchs_input {
+  border: 3px solid #fff;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 60px;
+  line-height: 2;
+  min-width: 300px;
+  outline: medium none;
+  padding: 10px 10px 10px 43px;
+  width: 320px;
+  transition: all 0.45s ease 0s;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.searchs_box .searchs_input.typing {
+  border: 3px solid #000;
+}
+.searchs_box .searchs_icon {
+  background-color: transparent;
+  border: medium none;
+  color: #111;
+  font-size: 16px;
+  left: 20px;
+  line-height: 1;
+  padding: 8px;
+  position: absolute;
+  top: 24px;
+}
+::-webkit-input-placeholder {
+  color: #999;
+
+}
+:-moz-placeholder {
+  color: #999;
+
+}
+::-moz-placeholder {
+  color: #999;
+ 
+}
+:-ms-input-placeholder {
+  color: #999;
+  
+}
+
+
+
+
+
+
+
+
+</style>
+ </head>
+  <body>
+<div class="container-fluid p-0">
+<div class="row">
+<div class="col-md-12">
+<div class="header-bg">j
+</div>
+
+</div>
+</div>
+</div>
+
+	 <nav class="navbar navbar-expand-lg navbar-light nav-color">
+  <a class="navbar-brand" href="#"><h4>bliss</h4></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+	
+	
+<div class="opens_search"><i class="fa fa-building"></i></div>
+
+
+<div class="searchs_block">
+  <div class="searchs_box">
+    <div class="inners">
+      <input type="text" name="search" id="searchs" class="searchs_input" autocomplete="off" placeholder="My city" />
+      <button class="searchs_icon glyphicon glyphicon-search"></button>
+    </div>
+  </div>
+  <div class="overlayers"></div>
+</div>
+	
+	
+<div class="open_search"><i class="fa fa-search"></i></div>
+
+
+<div class="search_block">
+  <div class="search_box">
+    <div class="inner">
+      <input type="text" name="search" id="search" class="search_input" autocomplete="off" placeholder="Search" />
+      <button class="search_icon glyphicon glyphicon-search"></button>
+    </div>
+  </div>
+  <div class="overlayer"></div>
+</div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+
+ 
+	
+	    <div class="my-icon mr-5">
+<span><a href="wishlist.html"><i class="fa fa-heart text-white"></i></a></span>&nbsp; &nbsp; &nbsp; &nbsp; 
+
+<span><a href="login.html"><i class="fa fa-user text-white"></i></a></span> &nbsp; &nbsp; &nbsp; &nbsp; 
+<span onclick="openNav()"><i class="fa fa-shopping-bag text-white"></i></span>&nbsp; &nbsp;
+</div>
+  </div>
+
+
+</nav> 
+
+<div class="container"style="max-width:1700px;">
+<div class="banner mt-3">
+<img src="images/main-banner.png">
+</div>
+</div>
+
+
+
+<!--products-->
+
+<div class="container">
+<div class="row mt-3">
+<h1>New Arrivals</h1>
+</div>
+
+<div class="row">
+<div class="col-md-3">
+        <div class="wsk-cp-product">
+          <div class="wsk-cp-img">
+            <img src="images/p1.jpg"  alt="Product" class="img-responsive" />
+          </div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <span>Product-1</span>
+            </div>
+           
+            <div class="description-prod">
+<h4>Rs. 700.00</h4>
+<button class="btn2">ADD TO CART</button>	
+            </div> 
+			
+		
+			</div> </div></div>	
+			
+			
+			
+	  
+<div class="col-md-3">          <div class="wsk-cp-product">
+          <div class="wsk-cp-img">
+            <img src="images/p2.jpg"  alt="Product" class="img-responsive" />
+          </div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <span>Product-2</span>
+            </div>
+           
+            <div class="description-prod">
+<h4>Rs. 200.00</h4>
+<button class="btn2">ADD TO CART</button>
+            </div> </div> </div>  </div>    
+	  
+	  
+	  
+<div class="col-md-3">           <div class="wsk-cp-product">
+          <div class="wsk-cp-img">
+            <img src="images/p3.jpg"  alt="Product" class="img-responsive" />
+          </div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <span>Product-3</span>
+            </div>
+           
+            <div class="description-prod">
+<h4>Rs. 700.00</h4>
+<button class="btn2">ADD TO CART</button>
+            </div> </div> </div>  </div> 
+	  
+	  
+	  
+<div class="col-md-3">          <div class="wsk-cp-product">
+          <div class="wsk-cp-img">
+            <img src="images/p4.jpg"  alt="Product" class="img-responsive" />
+          </div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <span>Product-4</span>
+            </div>
+           
+            <div class="description-prod">
+              <h4>Rs. 400.00</h4>
+			  <button class="btn2">ADD TO CART</button>
+            </div> </div> </div>  </div>
+		
+	<div class="col-md-12 text-center">  <button class="btn1">VIEW MORE</button>		</div>
+</div>
+
+</div>
+
+
+
+
+<div class="container-fluid" style="background:linear-gradient(to right,#f08ccd 0,#8cd0e3 100%);height:600px;position:relative;top:-50px;">
+<div class="container">
+
+<div class="row">
+<div class="col-md-6 mt-5"><div class="content-grid-effect slow-zoom vertical">
+                  <div class="img-box"><img src="images/small-banner1.png" class="img-fluid small"></div></div></div>
+				  
+				  
+				  
+<div class="col-md-6 mt-5"><div class="content-grid-effect slow-zoom vertical">
+                  <div class="img-box"><img src="images/small-banner2.png" class="img-fluid small"></div></div>
+</div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="container">
+<div class="row mt-3">
+
+
+
+
+<div class="col-md-3">
+        <div class="wsk-cp-product">
+          <div class="wsk-cp-img">
+            <img src="images/p1.jpg"  alt="Product" class="img-responsive" />
+          </div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <span>Product-1</span>
+            </div>
+           
+            <div class="description-prod">
+<h4>Rs. 700.00</h4>
+<button class="btn2">ADD TO CART</button>	
+            </div> 
+			
+		
+			</div> </div></div>	
+			
+			
+			
+	  
+<div class="col-md-3">          <div class="wsk-cp-product">
+          <div class="wsk-cp-img">
+            <img src="images/p2.jpg"  alt="Product" class="img-responsive" />
+          </div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <span>Product-2</span>
+            </div>
+           
+            <div class="description-prod">
+<h4>Rs. 200.00</h4>
+<button class="btn2">ADD TO CART</button>
+            </div> </div> </div>  </div>    
+	  
+	  
+	  
+<div class="col-md-3">           <div class="wsk-cp-product">
+          <div class="wsk-cp-img">
+            <img src="images/p3.jpg"  alt="Product" class="img-responsive" />
+          </div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <span>Product-3</span>
+            </div>
+           
+            <div class="description-prod">
+<h4>Rs. 700.00</h4>
+<button class="btn2">ADD TO CART</button>
+            </div> </div> </div>  </div> 
+	  
+	  
+	  
+<div class="col-md-3">          <div class="wsk-cp-product">
+          <div class="wsk-cp-img">
+            <img src="images/p4.jpg"  alt="Product" class="img-responsive" />
+          </div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <span>Product-4</span>
+            </div>
+           
+            <div class="description-prod">
+              <h4>Rs. 400.00</h4>
+			  <button class="btn2">ADD TO CART</button>
+            </div> </div> </div>  </div>
+		
+	<div class="col-md-12 text-center">  <button class="btn1">VIEW MORE</button>		</div>
+</div>
+
+</div>
+
+
+
+<script src="bootstrap/js/jquery-3.4.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $("#se_search-btn.se_search-coll").click(function() {
+        $(".se_search-coll").removeClass("se_search-coll");
+        $("#se_search-box").focus();
+        window.setTimeout(submittize,1000);
+    });
+    
+    $("#se_search-box").blur(function() {
+        $("#se_search-box, #se_search-btn").addClass("se_search-coll");
+        window.setTimeout(buttonize,1000);
+    })
+    
+    function buttonize() {
+        $("#se_search-btn").attr("type","button");
+    }
+    
+    function submittize() {
+        $("#se_search-btn").attr("type","submit");
+    }
+});
+  </script>
+
+
+<script>
+$('.open_search').on('click', function(event){
+  event.stopPropagation();
+
+  $('.search_block').toggleClass('visible');
+  $('.search_block .search_input').focus();
+});
+
+$('body').on('click', function(){
+  $('.search_block').removeClass('visible');
+});
+
+$('.search_box').on('click', function(event){
+  event.stopPropagation();
+});
+
+$('.search_input').on('keyup', function(event){
+  if($(this).val() !== ''){
+    $(this).addClass('typing');
+  } else {
+    $(this).removeClass('typing');
+  }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+ 
+
+	
+ 
+
+	  
+
